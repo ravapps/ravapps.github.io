@@ -59,8 +59,8 @@ function ShoppingListCheckOffService() {
 
   service.removeItem = function (itemIndex) {
     var item = {
-      name: items(itemIndex).name,
-      quantity: items(itemIndex).name
+      name: items[itemIndex].name,
+      quantity: items[itemIndex].quantity
     };
     bitems.push(item);
     items.splice(itemIndex, 1);
