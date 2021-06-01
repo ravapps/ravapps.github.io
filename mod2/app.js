@@ -11,6 +11,7 @@ function ToBuyController(ShoppingListCheckOffService) {
   var showBuyList = this;
 
   showBuyList.items = ShoppingListCheckOffService.getBuyItems();
+  showBuyList.errorMessage = showBuyList.items.length;
 
   showBuyList.removeItem = function (itemIndex) {
     ShoppingListCheckOffService.removeItem(itemIndex);
@@ -23,7 +24,7 @@ function AlreadyBoughtController(ShoppingListCheckOffService) {
   var showBougtList = this;
 
   showBougtList.items = ShoppingListCheckOffService.getBoughtItems();
-
+  showBougtList.errorMessage = showBougtList.items.length;
 
 }
 
