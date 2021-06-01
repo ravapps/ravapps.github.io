@@ -36,7 +36,7 @@
      <ul>
        <li ng-repeat="item in showBuyList.items">Buy  {{ item.quantity }} {{ item.name }} <button ng-click="showBuyList.removeItem($index);" class="btn btn-default"><span class="glyphicon glyphicon-ok"></span> Bought</button></li>
      </ul>
-     <div ng-if="showBuyList.errorMessage == 'y'" class="emptyMessage">Everything is bought!</div>{{ showBuyList.errorMessage }}
+     <div ng-if="showBuyList.errorMessage == 'y'" class="emptyMessage">Everything is bought!</div>{{  ShoppingListCheckOffService.getBuyError }}
     </div>
 
     <!-- Already Bought List -->
@@ -45,7 +45,7 @@
      <ul>
        <li ng-repeat="item in showBougtList.items">Bought  {{ item.quantity }} {{ item.name }}</li>
      </ul>
-     <div ng-if="showBougtList.errorMessage == 'y'" class="emptyMessage">Nothing bought yet.</div>{{ showBougtList.errorMessage }}
+     <div ng-if="showBougtList.errorMessage == 'y'" class="emptyMessage">Nothing bought yet.</div>{{ ShoppingListCheckOffService.getBoughtError }}
     </div>
   </div>
 </div>
