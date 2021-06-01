@@ -16,7 +16,7 @@ function ToBuyController(ShoppingListCheckOffService,$scope) {
   showBuyList.removeItem = function (itemIndex) {
     ShoppingListCheckOffService.removeItem(itemIndex);
     showBuyList.errorMessage =  ShoppingListCheckOffService.getBuyError();
-      showBougtList.errorMessage = ShoppingListCheckOffService.getBoughtError();
+      //showBougtList.errorMessage = ShoppingListCheckOffService.getBoughtError();
   };
 }
 
