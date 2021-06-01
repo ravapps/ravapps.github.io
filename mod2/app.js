@@ -58,10 +58,10 @@ function ShoppingListCheckOffService() {
   var bitems = [];
 
   service.removeItem = function (itemIndex) {
-    var item = {
-      name: items[itemIndex].name,
-      quantity: items[itemIndex].quantity
-    };
+    var item = [];
+    item.name = items[itemIndex].name;
+    item.quantity = items[itemIndex].quantity;
+
     bitems.push(item);
     items.splice(itemIndex, 1);
   };
