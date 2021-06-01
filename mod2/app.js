@@ -22,7 +22,7 @@ AlreadyBoughtController.$inject = ['ShoppingListCheckOffService'];
 function AlreadyBoughtController(ShoppingListCheckOffService) {
   var showBougtList = this;
 
-  showBougtList.items = ShoppingListCheckOffService.getBoughtItems();
+  //showBougtList.items = ShoppingListCheckOffService.getBoughtItems();
 
 
 }
