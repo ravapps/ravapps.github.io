@@ -11,7 +11,11 @@ function ToBuyController(ShoppingListCheckOffService) {
   var showBuyList = this;
 
   showBuyList.items = ShoppingListCheckOffService.getBuyItems();
-  showBuyList.errorMessage = showBuyList.items.length;
+  if(showBuyList.items.length) {
+      showBuyList.errorMessage = 'n';
+  } else {
+    showBuyList.errorMessage = 'y';
+  }
 
   showBuyList.removeItem = function (itemIndex) {
     ShoppingListCheckOffService.removeItem(itemIndex);
@@ -24,7 +28,11 @@ function AlreadyBoughtController(ShoppingListCheckOffService) {
   var showBougtList = this;
 
   showBougtList.items = ShoppingListCheckOffService.getBoughtItems();
-  showBougtList.errorMessage = showBougtList.items.length;
+  if(showBougtList.items.length) {
+      showBougtList.errorMessage = 'n';
+  } else {
+    showBougtList.errorMessage = 'y';
+  }
 
 }
 
