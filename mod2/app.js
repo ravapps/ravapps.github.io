@@ -19,6 +19,11 @@ function ToBuyController(ShoppingListCheckOffService) {
 
   showBuyList.removeItem = function (itemIndex) {
     ShoppingListCheckOffService.removeItem(itemIndex);
+    if(showBuyList.items.length) {
+        showBuyList.errorMessage = 'n';
+    } else {
+      showBuyList.errorMessage = 'y';
+    }
   };
 }
 
