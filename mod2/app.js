@@ -7,7 +7,7 @@ angular.module('ShoppingListCheckOff', [])
 .service('ShoppingListCheckOffService', ShoppingListCheckOffService);
 
 ToBuyController.$inject = ['ShoppingListCheckOffService', '$scope'];
-function ToBuyController(ShoppingListCheckOffService) {
+function ToBuyController(ShoppingListCheckOffService,$scope) {
   var showBuyList = this;
 console.log($scope);
   showBuyList.items = ShoppingListCheckOffService.getBuyItems();
