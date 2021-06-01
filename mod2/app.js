@@ -6,10 +6,10 @@ angular.module('ShoppingListCheckOff', [])
 .controller('AlreadyBoughtController', AlreadyBoughtController)
 .service('ShoppingListCheckOffService', ShoppingListCheckOffService);
 
-ToBuyController.$inject = ['ShoppingListCheckOffService'];
+ToBuyController.$inject = ['ShoppingListCheckOffService', '$scope'];
 function ToBuyController(ShoppingListCheckOffService) {
   var showBuyList = this;
-
+console.log($scope);
   showBuyList.items = ShoppingListCheckOffService.getBuyItems();
   if(showBuyList.items.length) {
       showBuyList.errorMessage = 'n';
