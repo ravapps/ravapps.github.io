@@ -17,7 +17,10 @@ function ToBuyController(ShoppingListCheckOffService,$scope) {
     ShoppingListCheckOffService.removeItem(itemIndex);
     showBuyList.errorMessage =  ShoppingListCheckOffService.getBuyError();
       //showBougtList.errorMessage = ShoppingListCheckOffService.getBoughtError();
-      $scope.$digest();
+      $scope.$watch('showBougtList.errorMessage', function (newValue, oldValue) {
+           console.log("onceCounter old value: ", oldValue);
+           console.log("onceCounter new value: ", newValue);
+         });
   };
 
 }
