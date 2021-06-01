@@ -9,7 +9,7 @@ angular.module('ShoppingListCheckOff', [])
 ToBuyController.$inject = ['ShoppingListCheckOffService', '$scope'];
 function ToBuyController(ShoppingListCheckOffService,$scope) {
   var showBuyList = this;
-console.log($scope);
+//console.log($scope);
   showBuyList.items = ShoppingListCheckOffService.getBuyItems();
   showBuyList.errorMessage =  ShoppingListCheckOffService.getBuyError();
 
