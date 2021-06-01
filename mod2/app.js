@@ -18,6 +18,7 @@ function ToBuyController(ShoppingListCheckOffService,$scope) {
     showBuyList.errorMessage =  ShoppingListCheckOffService.getBuyError();
       //showBougtList.errorMessage = ShoppingListCheckOffService.getBoughtError();
   };
+  $scope.$digest();
 }
 
 
