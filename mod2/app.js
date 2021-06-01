@@ -6,21 +6,14 @@ angular.module('ShoppingListCheckOff', [])
 .controller('AlreadyBoughtController', AlreadyBoughtController)
 .service('ShoppingListCheckOffService', ShoppingListCheckOffService);
 
-ToBuyController.$inject = ['ShoppingListCheckOffService', '$scope'];
-function ToBuyController(ShoppingListCheckOffService,$scope) {
+
+ToBuyController.$inject = ['ShoppingListCheckOffService'];
+function ToBuyController(ShoppingListCheckOffService) {
   var showBuyList = this;
-//console.log($scope);
   showBuyList.items = ShoppingListCheckOffService.getBuyItems();
-  showBuyList.errorMessage =  ShoppingListCheckOffService.getBuyError();
 
   showBuyList.removeItem = function (itemIndex) {
     ShoppingListCheckOffService.removeItem(itemIndex);
-    showBuyList.errorMessage =  ShoppingListCheckOffService.getBuyError();
-      //showBougtList.errorMessage = ShoppingListCheckOffService.getBoughtError();
-      $scope.$watch('showBougtList.errorMessage', function (newValue, oldValue) {
-           console.log("onceCounter old value: ", oldValue);
-           console.log("onceCounter new value: ", newValue);
-         });
   };
 
 }
@@ -32,7 +25,6 @@ function AlreadyBoughtController(ShoppingListCheckOffService) {
 
 
   showBougtList.items = ShoppingListCheckOffService.getBoughtItems();
-  showBougtList.errorMessage = ShoppingListCheckOffService.getBoughtError();
 }
 
 
@@ -78,14 +70,6 @@ function ShoppingListCheckOffService() {
     return items;
   };
 
-  service.getBuyError = function () {
-    if(items.length) {
-      return 'n';
-    } else {
-        return 'y';
-    }
-
-  };
 
 
   service.getBoughtItems = function () {
@@ -93,14 +77,6 @@ function ShoppingListCheckOffService() {
   };
 
 
-  service.getBoughtError = function () {
-    if(bitems.length) {
-      return 'n';
-    } else {
-        return 'y';
-    }
-
-  };
 
 
 
