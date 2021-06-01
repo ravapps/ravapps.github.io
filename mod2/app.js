@@ -11,19 +11,12 @@ function ToBuyController(ShoppingListCheckOffService,$scope) {
   var showBuyList = this;
 console.log($scope);
   showBuyList.items = ShoppingListCheckOffService.getBuyItems();
-  if(showBuyList.items.length) {
-      showBuyList.errorMessage = 'n';
-  } else {
-    showBuyList.errorMessage = 'y';
-  }
+  showBuyList.errorMessage =  ShoppingListCheckOffService.getBuyError();
 
   showBuyList.removeItem = function (itemIndex) {
     ShoppingListCheckOffService.removeItem(itemIndex);
-    if(showBuyList.items.length) {
-        showBuyList.errorMessage = 'n';
-    } else {
-      showBuyList.errorMessage = 'y';
-    }
+    showBuyList.errorMessage =  ShoppingListCheckOffService.getBuyError();
+      showBougtList.errorMessage = ShoppingListCheckOffService.getBoughtError();
   };
 }
 
@@ -31,15 +24,10 @@ console.log($scope);
 AlreadyBoughtController.$inject = ['ShoppingListCheckOffService'];
 function AlreadyBoughtController(ShoppingListCheckOffService) {
   var showBougtList = this;
-  if(ShoppingListCheckOffService.getBoughtItems().length) {
-      showBougtList.errorMessage = 'n';
-  } else {
-    showBougtList.errorMessage = 'y';
-  }
 
 
   showBougtList.items = ShoppingListCheckOffService.getBoughtItems();
-
+  showBougtList.errorMessage = ShoppingListCheckOffService.getBoughtError();
 }
 
 
@@ -85,9 +73,30 @@ function ShoppingListCheckOffService() {
     return items;
   };
 
+  service.getBuyError = function () {
+    if(items.length) {
+      return 'n';
+    } else {
+        return 'y';
+    }
+
+  };
+
+
   service.getBoughtItems = function () {
     return bitems;
   };
+
+
+  service.getBoughtError = function () {
+    if(bitems.length) {
+      return 'n';
+    } else {
+        return 'y';
+    }
+
+  };
+
 
 
 }
