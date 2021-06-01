@@ -31,13 +31,14 @@ function ToBuyController(ShoppingListCheckOffService) {
 AlreadyBoughtController.$inject = ['ShoppingListCheckOffService'];
 function AlreadyBoughtController(ShoppingListCheckOffService) {
   var showBougtList = this;
-
-  showBougtList.items = ShoppingListCheckOffService.getBoughtItems();
-  if(showBougtList.items.length) {
+  if(ShoppingListCheckOffService.getBoughtItems().length) {
       showBougtList.errorMessage = 'n';
   } else {
     showBougtList.errorMessage = 'y';
   }
+
+
+  showBougtList.items = ShoppingListCheckOffService.getBoughtItems();
 
 }
 
