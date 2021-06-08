@@ -1,12 +1,12 @@
 (function () {
 'use strict';
 
-angular.module('ShoppingList')
-.controller('MainShoppingListController', MainShoppingListController);
+angular.module('MenuApp')
+.controller('MainMenuListController', MainMenuListController);
 
 
-MainShoppingListController.$inject = ['ShoppingListService', 'items'];
-function MainShoppingListController(ShoppingListService, items) {
+MainMenuListController.$inject = ['MenuListService', 'items'];
+function MainMenuListController(MenuListService, items) {
   var mainlist = this;
   mainlist.items = items;
 }

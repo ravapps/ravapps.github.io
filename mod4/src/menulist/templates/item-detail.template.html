@@ -1,0 +1,45 @@
+
+
+<h3>Category Menu - {{itemDetail.short_name}} ({{itemDetail.mitems.length}}) </h3>
+
+
+
+
+<table>
+
+  <tr>
+
+    <td>Item id</td>
+
+    <td>Item name</td>
+    <td>Item short name</td>
+    <td>Item description</td>
+    <td>Item large portion name</td>
+    <td>Item small portion name</td>
+    <td>Item price large</td>
+    <td>Item price small</td>
+
+
+
+  </tr>
+
+
+  <tr ng-repeat="val in  itemDetail.mitems">
+
+    <td>{{ val.id }}</td>
+
+    <td> {{ val.name }}</td>
+    <td> {{ val.short_name }}</td>
+    <td> {{ val.description }}</td>
+    <td> {{ val.large_portion_name }}</td>
+    <td> {{ val.small_portion_name }}</td>
+    <td> {{ val.price_large }}</td>
+    <td> {{ val.price_small }}</td>
+
+
+
+  </tr>
+
+
+
+  </table>
