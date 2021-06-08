@@ -8,7 +8,7 @@ RoutesConfig.$inject = ['$stateProvider', '$urlRouterProvider'];
 function RoutesConfig($stateProvider, $urlRouterProvider) {
 
   // Redirect to home page if no other URL matches
-  $urlRouterProvider.otherwise('/categories');
+  $urlRouterProvider.otherwise('/');
 
   // *** Set up UI states ***
   $stateProvider
