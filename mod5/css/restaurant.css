@@ -62,6 +62,13 @@ body {
 }
 #nav-list a span {
   font-size: 1.8em;
+}button, input, optgroup, select, textarea {
+    margin: 0;
+    font: inherit;
+        font-size: inherit;
+        line-height: inherit;
+        font-family: inherit;
+    color: black;
 }
 
 #phone {
@@ -199,4 +206,14 @@ a[ui-sref="admin.auth"] {
     font-size: 6vw;
   }
   /* End Header */
+}
+
+
+button, input, optgroup, select, textarea {
+    margin: 0;
+    font: inherit;
+        font-size: inherit;
+        line-height: inherit;
+        font-family: inherit;
+    color: black;
 }
